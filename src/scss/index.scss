@@ -3,7 +3,7 @@
 $font-family-base: 'Lato', sans-serif;
 $img-path: 'img/';
 
-$flushs: s, c, d, h;
+$flushs: S, C, D, H;
 $poker-number: 13;
 $odd-column: 7;
 $even-column: 6;
@@ -55,28 +55,22 @@ main {
   &.null {
     border: 1px solid #FCFCFC;
   }
-
   &.default {
     background-color: #FCFCFC;
     background-size: 35px;
-
     .s & {
       background-image: url(#{$img-path}S.png);
     }
-
     .c & {
       background-image: url(#{$img-path}C.png);
     }
-
     .d & {
       background-image: url(#{$img-path}D.png);
     }
-
     .h & {
       background-image: url(#{$img-path}H.png);
     }
   }
-
   &-header {
     > div {
       justify-content: center;
@@ -88,6 +82,7 @@ main {
     grid-template-columns: 95px 95px 95px 95px 95px 95px 95px 95px;
     .column {
       position: relative;
+      height: 400px;
     }
     .poker {
       position: absolute;

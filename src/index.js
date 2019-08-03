@@ -5,7 +5,7 @@ import './scss/index.scss';
 window.$ = require('jquery');
 // import {jQuery} from 'jquery';
 let pokers = [];
-let flushs = ['s', 'c', 'd', 'h'];
+let flushs = ['S', 'C', 'D', 'H'];
 let $pokerTable = $('.poker-content');
 let $odd = $pokerTable.find('.odd');
 let $even = $pokerTable.find('.even');
