@@ -1,0 +1,156 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+
+$font-family-base: 'Lato', sans-serif;
+$img-path: '/theF2EChallange/freecell/doc/img';
+
+$flushs: s, c, d, h;
+$poker-number: 13;
+$odd-column: 7;
+$even-column: 6;
+
+@each $flush in $flushs {
+  @for $i from 1 through $poker-number {
+    .#{$flush}#{$i} {
+      background-image: url(#{$img-path}/cards_background/#{$flush}#{$i}.png);
+    }
+  }
+}
+
+@for $i from 1 through $odd-column {
+  .odd {
+    > :nth-child(#{$i}) {
+      top: #{30 * ($i - 1)}px;
+    }
+  }
+}
+
+@for $i from 1 through $even-column {
+  .even {
+    > :nth-child(#{$i}) {
+      top: #{30 * ($i - 1)}px;
+    }
+  }
+}
+
+body {
+  background-color: #E2E2E2;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px 15px;
+  margin: 0 auto;
+  @include media-breakpoint-down(sm) {
+    padding-top: 30px;
+  }
+}
+.poker {
+  width: 100%;
+  padding-top: 152.6315%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+  background-size: cover;
+  &.null {
+    border: 1px solid #FCFCFC;
+  }
+
+  &.default {
+    background-color: #FCFCFC;
+    background-size: 35px;
+
+    .s & {
+      background-image: url(#{$img-path}/S.png);
+    }
+
+    .c & {
+      background-image: url(#{$img-path}/C.png);
+    }
+
+    .d & {
+      background-image: url(#{$img-path}/D.png);
+    }
+
+    .h & {
+      background-image: url(#{$img-path}/H.png);
+    }
+  }
+
+  &-header {
+    > div {
+      justify-content: center;
+    }
+  }
+  &-content {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: 95px 95px 95px 95px 95px 95px 95px 95px;
+    .column {
+      position: relative;
+    }
+    .poker {
+      position: absolute;
+      left: 0;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &-header {
+      display: grid;
+      grid-column-gap: 15px;
+      grid-template-columns: auto 10% auto;
+      grid-template-rows: auto;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &-content {
+      width: 100%;
+      height: 400px;
+      overflow-x: auto;
+    }
+  }
+}
+
+.freecell {
+  width: 100%;
+  max-width: 104px;
+  text-align: center;
+  padding: 30px 15px 20px;
+  margin: 0 auto;
+  > img {
+    width: 100%;
+    max-width: 60px;
+  }
+  h1 {
+    font-size: $font-size-base * 0.875;
+    text-transform: uppercase;
+  }
+  @include media-breakpoint-up(md) {
+    order: 2;
+    padding: 30px 15px;
+  }
+}
+
+.grid-4 {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: 95px 95px 95px 95px;
+}
+
+.temporary {
+  margin-bottom: 15px;
+  @include media-breakpoint-up(md) {
+    order: 1;
+  }
+}
+
+.archive {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    order: 3;
+  }
+}
+
