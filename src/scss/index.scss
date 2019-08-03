@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap-reboot";
 
 $font-family-base: 'Lato', sans-serif;
-$img-path: '/img';
+$img-path: 'img/';
 
 $flushs: s, c, d, h;
 $poker-number: 13;
@@ -11,7 +11,7 @@ $even-column: 6;
 @each $flush in $flushs {
   @for $i from 1 through $poker-number {
     .#{$flush}#{$i} {
-      background-image: url(#{$img-path}/cards_background/#{$flush}#{$i}.png);
+      background-image: url(#{$img-path}cards_background/#{$flush}#{$i}.png);
     }
   }
 }
@@ -61,19 +61,19 @@ main {
     background-size: 35px;
 
     .s & {
-      background-image: url(#{$img-path}/S.png);
+      background-image: url(#{$img-path}S.png);
     }
 
     .c & {
-      background-image: url(#{$img-path}/C.png);
+      background-image: url(#{$img-path}C.png);
     }
 
     .d & {
-      background-image: url(#{$img-path}/D.png);
+      background-image: url(#{$img-path}D.png);
     }
 
     .h & {
-      background-image: url(#{$img-path}/H.png);
+      background-image: url(#{$img-path}H.png);
     }
   }
 
