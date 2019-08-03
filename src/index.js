@@ -1,5 +1,4 @@
 import './scss/index.scss';
-import './scss/app.scss';
 // require('bootstrap-sass/assets/stylesheets/_bootstrap.scss')
 
 // require('jquery')
